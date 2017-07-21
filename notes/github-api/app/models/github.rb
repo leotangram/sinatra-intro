@@ -12,10 +12,10 @@ module Github
       }
     end
 
-    def posts
+    def gists
       response = self.class.get('/some/endpoint', {
         query: { with: 'paramaters' }
-        })
+      })
       return response.body
     end
 
