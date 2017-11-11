@@ -1,0 +1,9 @@
+<h1>Figthers</h1>
+
+<ul>
+  <% @figthers.each do |figther| %>
+    <li><a href="/figthers/<%= figther.id %>"><%= figther.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/figther/new">Crea un Figther</a>
