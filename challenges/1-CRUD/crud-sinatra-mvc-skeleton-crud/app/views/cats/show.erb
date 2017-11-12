@@ -1,0 +1,9 @@
+<h1>Hola! soy un lindo gatito, me llamo <%= @cat.name %> y auque no lo creas tengo <%= @cat.age %>!... Miau!</h1>
+<h2>Bienvenido a mi hermoso perfil!</h2>
+
+<a href="/cats/<%= @cat.id %>/edit">Editame si no te gusta algo de mí! :(</a>
+
+<form action="/cats/<%= @cat.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" name="Borrar">
+</form>

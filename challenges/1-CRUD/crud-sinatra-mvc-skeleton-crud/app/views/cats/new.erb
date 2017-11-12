@@ -1,0 +1,17 @@
+<h1>Vamos a crear un lindo gatito! Miau!</h1>
+
+<% if @errors %>
+	<ul>
+		<% @errors.each do |error| %>
+		<li><%= error %></li>
+		<% end %> 
+	</ul>
+<% end %>
+
+<form action="cats" method="POST">
+	<label for="name">Nombre del lindo gatico</label>
+	<input type="text" name="name"><br>
+	<label for="age"> Años del lindo gatico</label>
+	<input type="number" name="age"><br>
+	<input type="submit" name="Creemos al lindo gatico!">
+</form>
