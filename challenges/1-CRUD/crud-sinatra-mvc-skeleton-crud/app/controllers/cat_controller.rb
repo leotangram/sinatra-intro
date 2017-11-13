@@ -21,12 +21,12 @@ get '/cats/:id' do
 end
 
 # CREATE
-post '/cats/' do
+post '/cats' do
 	@cat = Cat.new(name: params[:name], age: params[:age])
-	if cat.save
-		redirect "/cats/#{cat.id}"
+	if @cat.save
+		redirect "/cats/#{@cat.id}"
 	else 
-		@error = @cat.error.full_messages
+		@error = @cat.errors.full_messages
 		erb :"cats/new"
 	end
 end
@@ -41,10 +41,12 @@ end
 patch '/cats/:id' do
 	@cat = Cat.find(params[:id])
 	if @cat.update(name: params[:name], age: params[:age])
+		redirect "/cats/#{@cat.id}"
 	else
-		@errors = @cat.errors.full_messages
+		@error = @cat.errors.full_messages
 		erb :"cats/edit"
 	end
+	# "you head the patch request"
 end	
 
 # DELETE

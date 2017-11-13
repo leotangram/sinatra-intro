@@ -1,12 +1,11 @@
 <h1>Editame! Miau!</h1>
 
-<% if @errors %>
+<% if @error %>
 	<h3>Tu catico ya es lindo porque nó es válido!</h3>
-	<img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwijzd6P5LfXAhXKilQKHe_WAT0QjRwIBw&url=http%3A%2F%2Fwww.mundotkm.com%2Fmx%2Fhot-news%2F71059%2Feste-es-luhu-el-gatito-mas-triste-del-mundo&psig=AOvVaw2ggJlfxyh16g-98_b5nkUM&ust=1510533004778340">
-	<!-- http://mxcdn02.mundotkm.com/2015/09/Captura-de-pantalla-2015-09-09-a-las-12.23.01-190x160.png -->
+	<img src="http://mxcdn02.mundotkm.com/2015/09/Captura-de-pantalla-2015-09-09-a-las-12.23.01-190x160.png">
 	<ul>
-		<% @errors.each do |variable| %>
-			<li><% error %></li>
+		<% @error.each do |error| %>
+			<li><%= error %></li>
 		<% end %>
 	</ul>
 <% end %>
